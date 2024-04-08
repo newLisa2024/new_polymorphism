@@ -5,3 +5,38 @@
 # Rectangle, Square), каждый из которых переопределяет метод area().
 # В каждом из этих классов метод area() должен возвращать площадь соответствующей фигуры.
 # Написать функцию, которая принимает объект класса Shape и выводит его площадь.
+
+class Shape:
+    def area(self):
+        return 0
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * (self.radius ** 2)
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+
+class Square(Shape):
+    def __init__(self, width):
+        self.width = width
+
+    def area(self):
+        return self.width ** 2
+
+def print_area(shape):
+    print(f'площадь фигуры = {shape.area()}')
+
+circle = Circle(5)
+rectangle = Rectangle(3, 7)
+square = Square(6)
+
+print_area(circle)
+print_area(rectangle)
+print_area(square)
